@@ -1,0 +1,144 @@
+
+table {
+  width: 20%;
+}
+.tableHeaderCellDiv { 
+    resize: horizontal;  
+    overflow:hidden;
+    background-color:#0A314D;
+    color: white;
+} 
+
+igxLabel{
+
+  margin-left:200px
+}
+ .mat-mdc-select-arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid;
+  margin: 0 4px;
+}
+select {
+  -webkit-appearance: listbox !important;
+  }
+.mdc-button{
+  background-color: #035382 !important;   
+  color:white !important;
+  margin: 5px;
+}
+
+.users-table-div{
+  width: 97%; 
+  margin: 20px;   
+} 
+
+.mat-mdc-row:nth-child(2n +1){
+  background-color: #e3e8ea  !important;
+}
+
+.mat-mdc-row:not(:nth-child(n/2 )){
+  background-color: white  !important;
+}
+
+
+
+.row_is_clicked{
+ font-weight: bold !important;
+
+}
+
+
+.mat-mdc-row:nth-child(2n +1){
+  background-color: #e3e8ea  !important;
+}
+
+.mat-mdc-row:not(:nth-child(n/2 )){
+  background-color: white  !important;
+}
+
+
+.mat-mdc-header-cell{
+  background-color:#0A314D !important;
+  font-size: 14px;
+   color:white;
+}
+
+igx-icon {
+  --color: var(--igx-icon-color, 'currentColor');
+  --disabled-color: var(--igx-icon-disabled-color, 'currentColor');
+  --size: var(--igx-icon-size, max(var(--is-large, 1)* max(1.5rem, -1* 1.5rem), var(--is-medium, 1)* max(1.25rem, -1* 1.25rem), var(--is-small, 1)* max(1.125rem, -1* 1.125rem)));
+  --default-size: var(--igx-icon-default-size, 3);
+}
+
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+
+ 
+
+.igx-input-group igx-prefix, .igx-input-group--focused igx-prefix, .igx-input-group [igxPrefix], .igx-input-group--focused [igxPrefix], .igx-input-group igx-suffix, .igx-input-group--focused igx-suffix, .igx-input-group [igxSuffix], .igx-input-group--focused [igxSuffix] {
+  position: relative;
+  display: inline-flex;
+  width: max-content;
+  align-items: center;
+  height: 100% !important;
+  transition: color .25s cubic-bezier(0.215, 0.61, 0.355, 1), background .25s cubic-bezier(0.215, 0.61, 0.355, 1);
+  padding-inline: max(var(--is-large, 1)* max(1rem, -1* 1rem)* var(--ig-spacing-inline-large, var(--ig-spacing-inline, --ig-spacing)), var(--is-medium, 1)* max(0.875rem, -1* 0.875rem)* var(--ig-spacing-inline-medium, var(--ig-spacing-inline, --ig-spacing)), var(--is-small, 1)* max(0.75rem, -1* 0.75rem)* var(--ig-spacing-inline-small, var(--ig-spacing-inline, --ig-spacing)));
+}
+
+.ig-typography .igx-input-group igx-prefix:not(igx-icon), .igx-input-group .ig-typography igx-prefix:not(igx-icon), .ig-typography .igx-input-group--focused igx-prefix:not(igx-icon), .igx-input-group--focused .ig-typography igx-prefix:not(igx-icon), .ig-typography .igx-input-group [igxPrefix]:not(igx-icon), .igx-input-group .ig-typography [igxPrefix]:not(igx-icon), .ig-typography .igx-input-group--focused [igxPrefix]:not(igx-icon), .igx-input-group--focused .ig-typography [igxPrefix]:not(igx-icon), .ig-typography .igx-input-group igx-suffix:not(igx-icon), .igx-input-group .ig-typography igx-suffix:not(igx-icon), .ig-typography .igx-input-group--focused igx-suffix:not(igx-icon), .igx-input-group--focused .ig-typography igx-suffix:not(igx-icon), .ig-typography .igx-input-group [igxSuffix]:not(igx-icon), .igx-input-group .ig-typography [igxSuffix]:not(igx-icon), .ig-typography .igx-input-group--focused [igxSuffix]:not(igx-icon), .igx-input-group--focused .ig-typography [igxSuffix]:not(igx-icon) {
+  font-family: var(--ig-subtitle-1-font-family, var(--ig-font-family));
+  font-size: var(--ig-subtitle-1-font-size);
+  font-weight: var(--ig-subtitle-1-font-weight);
+  font-style: var(--ig-subtitle-1-font-style);
+  line-height: var(--ig-subtitle-1-line-height);
+  letter-spacing: var(--ig-subtitle-1-letter-spacing);
+  text-transform: var(--ig-subtitle-1-text-transform);
+  margin-top: var(--ig-subtitle-1-margin-top);
+  margin-bottom: var(--ig-subtitle-1-margin-bottom);
+  margin: 0;
+}
+
+ 
+
+.dropdown.show .dropdown-toggle:after, .dropdown-toggle.collapsed:after {
+  float:right !important;
+  font-size: large;
+  margin-top: 10px;
+}
+
+
+.dropdown-toggle::after {
+ 
+  font-size: large;
+  float:right !important;
+  margin-top: 10px;
+}
+
+.btn-outline-primary {
+border-color: rgb(209, 203, 203) !important;
+ 
+
+
+}
+
+
+
+ 

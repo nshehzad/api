@@ -1,0 +1,109 @@
+<nav id="breadcrumbs" class="col-12 d-md-block d-none mb-3">
+  <ul class="breadcrumb ms-3">
+    <li class="breadcrumb-item"><a> Security Resources</a></li>
+    <li class="breadcrumb-item"><a routerLink="/column-resources"> Column Resources</a></li>
+  </ul>
+</nav>
+<main id="content">
+  <div id="contentarea" class="row">
+    <aside id="stickynav" class="col-12 col-md-3 col-xl-3">
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-12" headers="View Column Resources">View Column Resources</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="searchForm">
+            <div class="row row-cols-12 row-cols-md-12 row-cols-lg-12 g-12 mb-12">
+              <div class="col">
+                <div class="form-group">
+                  <label for="role" class="form-label fw-bold">Roles <i class="fas fa-info-circle ms-1"
+                      data-toggle="tooltip" placement="end" ngbTooltip="Select a role"></i></label>
+                    <select class="form-select" aria-label="Select" formControlName="role" (change)="this.onRoleSelected()">
+                      <option value=""></option>
+                      <option *ngFor="let role of roles;" [ngValue]="role.roleCode"> {{role.roleCode}} </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                  <label for="resource" class="form-label fw-bold">Resource Name <i class="fas fa-info-circle ms-1"
+                     data-toggle="tooltip" placement="end" ngbTooltip="Select a resource"></i></label>
+                    <ng-typeahead-resources  [selectedRole]="this.selectedRole" (modelChange)="onResourceSelected($event)"></ng-typeahead-resources>
+                </div>
+                
+                
+                <div class="form-group">
+                  <label for="column" class="form-label fw-bold">Column Name <i class="fas fa-info-circle ms-1"
+                     data-toggle="tooltip" placement="end" ngbTooltip="Select a column"></i></label>
+                    <ng-typeahead-columns (modelChange)="onColumnSelected($event)"></ng-typeahead-columns>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="card-footer">
+          <div class="mb-1 row mt-1">
+            <div class="col-12">
+              <div class="d-grid gap-2 d-flex justify-content-md-end">
+                <button class="btn btn-primary me-12" (click)="this.SearchResources()"><a
+                    class="text-white">Search</a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Article (Primary) Content - Full size tablet/mobile, 2/3rd size at large, and 5/6 at x-large -->
+    <article id="article" class="component-library col-12 col-md-8 col-xl-9 pr-4 pl-4 ml-2">
+      <section>
+        <div class="row">
+          <div class="col-3 float-left pb-3">
+            <span class="p pe-2">Show</span>
+            <select [(ngModel)]="pageSize">
+              <option [ngValue]="10">10</option>
+              <option [ngValue]="20">20</option>
+              <option [ngValue]="50">50</option>
+              <option [ngValue]="100">100</option>
+            </select>
+            <span class="3 ps-2">entries</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-9 float-right">
+            <div class="row text-center pb-2" *ngIf="this.isLoading">
+              <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <table class="table bg-dark">
+            <tr>
+              <th scope="col" (click)="sort('logId')">Role<i class="fas fa-sort"
+                  style="color:#fff;background-color:#6c757d"></i></th>
+              <th scope="col" (click)="sort('userId')">Resource Name<i class="fas fa-sort"
+                  style="color:#fff;background-color:#6c757d"></i></th>
+              <th scope="col" (click)="sort('timeStamp')">Column Name<i class="fas fa-sort"
+                  style="color:#fff;background-color:#6c757d"></i></th>
+            </tr>
+            <tr *ngIf="this.resourceColumnListings && this.resourceColumnListings?.length==0">
+              <td style="text-align:center;" colspan="4">No record found!</td>
+            </tr>
+            <tr *ngFor="let entry of resourceColumnListings;">
+              <td scope="col">{{entry.roleCode}}</td>
+              <td scope="col">{{entry.resourceName}}</td>
+              <td scope="col">{{entry.columnName}}</td>
+            </tr>
+          </table>
+          <div class="row">
+            <div class="col-sm-12 col-md-12"><span class="text-danger">{{this.error}} </span></div>
+          </div>
+          <app-pagination #pagination></app-pagination>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
